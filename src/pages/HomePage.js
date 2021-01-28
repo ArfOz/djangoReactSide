@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 
 async function fetchData() {
     await axios
-      .get("https://blog-backend-django.herokuapp.com/api/list/")
+      .get("https://djangoandreact1.herokuapp.com/api/list/")
       .then(function (response) {
         console.log(response.data);
         // I need this data here ^^

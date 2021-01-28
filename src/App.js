@@ -1,19 +1,9 @@
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import SignInSide from "./pages/SignIn/SignIn"
-import SignUp from "./pages/SignUp/SignUp"
-import Blog from "./pages/BlogPage/Blog"
 
-
-
+import AppRouter from '../src/router/Router'
 
 const App = () => {
-    return (
-        <div>
-         {/* <SignInSide /> */}
-         <SignUp />
-         {/* <Blog /> */}
-         
-        </div>
-    )
-}
+  return (
+   <AppRouter/>
+  );
+};
 export default App;

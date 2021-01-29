@@ -20,7 +20,7 @@ import axios from 'axios'
 async function forgetPasswordTriger({email}) {
   
   await axios
-  .post("https://djangoandreact1.herokuapp.com/auth/password/reset/confirm/", {
+  .post("https://blog-backend-django.herokuapp.com/dj-rest-auth/password/reset/", {
     email
   }
   )

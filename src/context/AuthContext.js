@@ -25,7 +25,7 @@ function AuthContextProvider(props) {
 
   async function getData(token) {
     await axios
-      .get("https://blog-backend-django.herokuapp.com/dj-rest-auth/user/", {
+      .get("https://djangoandreact1.herokuapp.com/auth/user/", {
         headers: {
           Authorization: `Token ${token}`,
         },

@@ -74,7 +74,7 @@ export default function SignUp() {
 
   async function register({ username, email, password, password2 }) {
     await axios
-      .post("https://blog-backend-django.herokuapp.com/api/user/register/", {
+      .post("https://djangoandreact1.herokuapp.com/api/user/register/", {
         username,
         email,
         password,

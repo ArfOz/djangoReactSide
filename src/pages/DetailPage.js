@@ -103,7 +103,7 @@ export default function DetailPage() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    console.log("test");
+    //console.log("test");
     if (token) {
       getPostDetails(mySlug);
       userInfo(mySlug);
@@ -113,7 +113,7 @@ export default function DetailPage() {
   async function getPostDetails(mySlug) {
     await axios
       .get(
-        `https://blog-backend-django.herokuapp.com/api/${mySlug}/`,
+        `https://djangoandreact1.herokuapp.com/api/${mySlug}/`,
         {
           headers: { Authorization: `Token ${token}` },
         },
@@ -124,20 +124,20 @@ export default function DetailPage() {
       .then((res) => setPostDetail(res.data))
       .then(console.log("P", postDetail));
   }
-  console.log(postDetail.comments);
+  // console.log(postDetail.comments);
 
   async function postComment(comment, mySlug) {
-    console.log(comment);
-    console.log(mySlug);
+    //console.log(comment);
+    //console.log(mySlug);
     await axios
       .post(
-        `https://blog-backend-django.herokuapp.com/api/comment/${mySlug}/`,
+        `https://djangoandreact1.herokuapp.com/api/comment/${mySlug}/`,
         { content: comment },
         {
           headers: { Authorization: `Token ${token}` },
         }
       )
-      .then(console.log("veri gittiiiiiiiiiiii"))
+      //.then(console.log("veri gittiiiiiiiiiiii"))
       .then(getPostDetails(mySlug))
       .catch((error) => console.log(error));
   }
@@ -155,7 +155,7 @@ export default function DetailPage() {
   async function handleLike(mySlug) {
     await axios
       .post(
-        `https://blog-backend-django.herokuapp.com/api/like/${mySlug}/`,
+        `https://djangoandreact1.herokuapp.com/api/like/${mySlug}/`,
         { data: "" },
         {
           headers: {
@@ -172,7 +172,7 @@ export default function DetailPage() {
 
   async function userInfo(mySlug) {
     await axios
-      .get(`https://blog-backend-django.herokuapp.com/api/${mySlug}/`, {
+      .get(`https://djangoandreact1.herokuapp.com/api/${mySlug}/`, {
         headers: {
           Authorization: `Token ${token}`,
         },

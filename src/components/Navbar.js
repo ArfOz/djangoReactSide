@@ -54,10 +54,10 @@ const useStyles = makeStyles((theme) => ({
 export default function Navbar() {
   const history = useHistory();
   const { currentUser } = useContext(AuthContext);
-  console.log("currentUser", currentUser?.data?.username);
+  //console.log("currentUser", currentUser?.data?.username);
   const [auth, setAuth] = useState(false);
   useEffect(() => {
-    console.log(currentUser);
+    //console.log(currentUser);
     if (currentUser == null) {
       setAuth(false);
     } else {
@@ -83,7 +83,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     const token = localStorage.getItem("token");
     await axios
-      .post("https://blog-backend-django.herokuapp.com/dj-rest-auth/logout/", {
+      .post("https://djangoandreact1.herokuapp.com/auth/logout/", {
         headers: {
           Authorization: `Token ${token}`,
         },
